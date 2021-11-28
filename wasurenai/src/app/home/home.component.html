@@ -1,0 +1,19 @@
+<div style="height: 20px"></div>
+<form>
+    <div class="mx-auto" style="width: 180px">
+        <label class="input_form">
+        <input
+            type="text"
+            name="input_japanese"
+            [(ngModel)]="inputJP"
+            required
+            placeholder="タスクを入力"/>
+        </label>
+    </div>
+</form>
+
+<div style="height: 20px"></div>
+
+<div class="row justify-content-center">
+    <button (click)="postTodo()" class="btn btn-info" style="width: 100px" >登録</button>
+</div>
