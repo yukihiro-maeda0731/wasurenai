@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
 
   postTodo(){
     this.todo.todo = this.inputJP;
-    this.service.postTodo(this.todo)
+    console.log(this.todo.todo)
+    this.service.postTodo(this.todo.todo)
     .subscribe(
       data => {
         this.todos = data
