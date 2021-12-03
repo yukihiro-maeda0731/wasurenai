@@ -22,8 +22,9 @@ export class PostTodoServiceService {
    * メモ登録。
    */
    postTodo(todo: String): Observable<any> {
-    let a = {"todo_id":"","todo":todo}
-    // return this.http.post(this.apigatewayURL,JSON.stringify(a), this.httpOptions)
-    return this.http.post(this.apigatewayURL,a, this.httpOptions)
+    let a = {"todo":todo}
+    // return this.http.post(this.apigatewayURL,JSON.stringify(a))
+    return this.http.post(this.apigatewayURL,JSON.stringify(a), this.httpOptions)
+    // return this.http.post(this.apigatewayURL,a, this.httpOptions)
   }
 }
