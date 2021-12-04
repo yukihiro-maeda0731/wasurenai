@@ -12,7 +12,7 @@ export class PostTodoServiceService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Headers": "*"
     })
   };
 
@@ -22,9 +22,10 @@ export class PostTodoServiceService {
    * メモ登録。
    */
    postTodo(todo: String): Observable<any> {
-    let a = {"todo":todo}
-    // return this.http.post(this.apigatewayURL,JSON.stringify(a))
-    return this.http.post(this.apigatewayURL,JSON.stringify(a), this.httpOptions)
-    // return this.http.post(this.apigatewayURL,a, this.httpOptions)
+    // let data = JSON.stringify({"todo": todo});
+    let data = {"todo": todo};
+    // return this.http.post(this.apigatewayURL,JSON.stringify(data))
+    return this.http.post(this.apigatewayURL,data, this.httpOptions)
+    // return this.http.post(this.apigatewayURL,data, this.httpOptions)
   }
 }
